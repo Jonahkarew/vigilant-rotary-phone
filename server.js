@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const routes = require('./routes')
+const todos = require('./routes/api/todo-routes')
 
 
 const app = express()
@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 }
 
-app.use(routes)
+app.use('/api/todos', todos)
 
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/long-lost-friends';
 mongoose.Promise = Promise;

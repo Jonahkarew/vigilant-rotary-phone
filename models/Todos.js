@@ -5,18 +5,21 @@ const { Schema } = mongoose;
 
 
 const todoSchema = new Schema ({
-    itemId: {
-        type: String
+    titleTodo: {
+        type: String,
+        default: "title"
     },
-    itemTitle: {
-        type: String
-    },
-    itemType: {
-        String
+    typeTodo: {
+        type: String,
+        default: "type"
     },
     completed: {
         type: Boolean,
         default: false
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 
