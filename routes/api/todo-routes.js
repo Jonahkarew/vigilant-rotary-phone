@@ -1,5 +1,11 @@
 const router = require('express').Router()
-const { getSavedTodos, createTodo, updateTodo} = require('../../controllers/todo-controller')
+const { getSavedTodos,
+        createTodo, 
+        updateTodo,
+        getMovies,
+        getGames,
+        getTv,
+        getBooks} = require('../../controllers/todo-controller')
 
 
 
@@ -10,6 +16,22 @@ router
     .get(getSavedTodos)
     .post(createTodo)
     // .put(updateTodo)
+
+router
+    .route('/movies')
+    .get(getMovies)
+
+router 
+    .route('/games')
+    .get(getGames)
+
+router
+    .route('/tv')
+    .get(getTv)
+
+router
+    .route('/books')
+    .get(getBooks)
 
 router
     .route('/update/')

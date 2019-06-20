@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 // import ThemeProvider from '@material-ui/styles/ThemeProvider/ThemeProvider'
 import Container from '@material-ui/core/Container'
-import TodoList from '../Components/List'
+import MovieList from '../Components/movieList'
+import NavBar from '../Components/NavBar/'
 
 
 
@@ -13,8 +14,9 @@ export class Movie extends Component {
                     <Container 
                     maxWidth='sm'
                     >
+                        <NavBar />
                         <h1>Movies</h1>
-                        <TodoList />
+                        <MovieList />
                         
                     </Container>
                 </React.Fragment>

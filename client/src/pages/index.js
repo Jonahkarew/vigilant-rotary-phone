@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Movie from './Movie'
+import Create from './CreateTodo'
 
 class Index extends Component {
     state = {
@@ -28,6 +29,10 @@ render(){
         case 'game':
             return(
                 <h1>games</h1>
+            )
+        case 'create':
+            return(
+                <Create />
             )
         default:
             return(

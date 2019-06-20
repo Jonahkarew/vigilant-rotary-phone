@@ -11,6 +11,46 @@ const getSavedTodos = (req, res) => {
     })
 }
 
+//get movies
+const getMovies = (req, res) => {
+    Todos.find({"typeTodo": "movie"})
+    .then(dbTodoData => res.json(dbTodoData))
+    .catch(err => {
+        console.log(err);
+        res.json(err)
+    })
+}
+
+// get games
+const getGames = (req, res) => {
+    Todos.find({"typeTodo": "game"})
+    .then(dbTodoData => res.json(dbTodoData))
+    .catch(err => {
+        console.log(err);
+        res.json(err)
+    })
+}
+
+// get tv
+const getTv = (req, res) => {
+    Todos.find({"typeTodo": "tv"})
+    .then(dbTodoData => res.json(dbTodoData))
+    .catch(err => {
+        console.log(err);
+        res.json(err)
+    })
+}
+
+// get books
+const getBooks = (req, res) => {
+    Todos.find({"typeTodo": "book"})
+    .then(dbTodoData => res.json(dbTodoData))
+    .catch(err => {
+        console.log(err);
+        res.json(err)
+    })
+}
+
 // route for creating todos
 
 const createTodo = (req, res) => {
@@ -54,5 +94,9 @@ const updateTodo = async(req, res) => {
 module.exports = {
     getSavedTodos,
     createTodo,
-    updateTodo
+    updateTodo,
+    getMovies,
+    getGames,
+    getTv,
+    getBooks
 }

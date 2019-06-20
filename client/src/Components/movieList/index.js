@@ -6,7 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 
 import axios from 'axios'
 
-class TodoList extends Component{
+class MovieList extends Component{
     state = {
         todos: []
     }
@@ -14,9 +14,13 @@ class TodoList extends Component{
 
 
     componentDidMount()  {
-        axios.get('/api/todos').then((response) => {
+        axios.get('/api/todos/movies').then((response) => {
             this.setState({ todos: response.data})
         })
+    }
+
+    handleClick = (event) => {
+        console.log(this.state)
     }
 
     render(){
@@ -26,20 +30,25 @@ class TodoList extends Component{
                 <div>{
                 this.state.todos.map(result => {
                     return(
-                        <React.Fragment key={`extraKey-${result._id}`}
-                                        >
+                        <React.Fragment  key={`extraKey-${result._id}`}>
+                            
                             <ListItem>
+                                
                                 <ListItemText
                                 primary={result.titleTodo}
+                                completed={result.completed}
                                 >
                                     
                                 </ListItemText>
                                 <Button 
-                                    variant="contained" color="primary">
+                                    variant="contained" 
+                                    color="primary"
+                                    onClick={this.handleClick}
+                                    >
                                     Complete
                                 </Button>
                             </ListItem>
-                                <br />
+                            <br />
                         </React.Fragment>
                     )
                 })
@@ -50,4 +59,4 @@ class TodoList extends Component{
     }
 }
 
-export default TodoList
+export default MovieList
