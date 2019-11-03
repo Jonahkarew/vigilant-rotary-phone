@@ -8,7 +8,8 @@ export class Create extends Component {
         return (
             <div>
                 <Container maxWidth="md">
-                <SubmitForm />
+                <SubmitForm
+                 />
                 </Container>
             </div>
         )
